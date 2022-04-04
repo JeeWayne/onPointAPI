@@ -22,10 +22,17 @@ A NodeJS wrapper for the [onPoint API](https://onpointrblx.com/developers/vendr)
 $ npm install onpoint-api
 ```
 
-##Example Usage
+## Example Usage
 
 ```javascript
 const onPointAPI = require('onpoint-api');
+
+//VendrAPI
+const VendrAPI = new onPointAPI.VendrAPI("APIKey", "HubID")
+
+//Users
+
+VendrAPI.GetUser("discord", "12345678910111213") //Returns a User class which the Discord Id is 12345678910111213.
 
 ```
 
