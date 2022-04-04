@@ -55,3 +55,15 @@ Links the Discord user of the Discord Id with the code given.
 
 ### GetHubInfo()
 Returns a HubInfo class (information of your hub).
+
+### GetHubProducts()
+Rerturns an array consisting of Product classes.
+
+### GetLicence(ProductName, ClientType, Identification)
+Returns a licence class if the user owns a licence. Errors if they don't
+
+### CreateLicence(ProductName, ClientType, Identification)
+Creates a licence for the user. Errors if they already have one.
+
+### DeleteLicence(ProductName, ClientType, Identification)
+Deletes a licence for the user. Errors if they don't have it in the first place.
