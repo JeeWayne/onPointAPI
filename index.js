@@ -1,4 +1,4 @@
-const VendrAPI = require('./lib/VendrAPI');
+const VendrAPI = require('./lib/Vendr/VendrAPI');
 
 
 module.exports = {VendrAPI}
