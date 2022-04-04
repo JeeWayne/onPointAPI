@@ -40,7 +40,13 @@ VendrAPI.LinkUser("ts10106", "12345678910111213") //Link the Discord user with t
 
 //Hub
 VendrAPI.GetHubInfo() //Returns a HubInfo class of the hub.
-VendrAPI.GetHubProducts() //Returns an array of Product classes of each product in your hub.
+VendrAPI.GetHubProducts() //Returns an array consisting of Product classes of each product in your hub.
+
+//Licenses
+VendrAPI.GetLicence("IFE", "roblox", "1234567") //Gets a Roblox user with the Roblox Id of 1234567's IFE licence. Will error if there is no licence.
+VendrAPI.CreateLicence("Plane", "discord", "12345678910111213") //Creates a Plane licence for the Discord user with the id of 12345678910111213.
+VendrAPI.DeleteLicence("Ship", "roblox", "1234567") //Deletes a ship licence from the Roblox user with the Roblox Id of 1234567.
+
 
 ```
 
