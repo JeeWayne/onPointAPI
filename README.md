@@ -44,5 +44,6 @@ VendrAPI.DeleteLicence("Ship", "roblox", "1234567") //Deletes a ship licence fro
 
 ## List of Functions (API Endpoints)
 
-
+### GetUser(ClientType, Identification)
+Returns a user with the information you gave.
 
