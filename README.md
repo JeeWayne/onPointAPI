@@ -31,8 +31,14 @@ const onPointAPI = require('onpoint-api');
 const VendrAPI = new onPointAPI.VendrAPI("APIKey", "HubID")
 
 //Users
-
 VendrAPI.GetUser("discord", "12345678910111213") //Returns a User class which the Discord Id is 12345678910111213.
+VendrAPI.GetUser("roblox", "1234567") //Returns a User class which the Roblox Id is 1234567.
+
+//Linking
+VendrAPI.GetLinkCode("1234567") //Get the link code for a Roblox user with the id of 1234567.
+VendrAPI.LinkUser("ts10106", "12345678910111213") //Link the Discord user with the id of 12345678910111213 with the link code which you can get with the GetLinkCode function.
+
+//Hub
 
 ```
 
