@@ -47,3 +47,11 @@ VendrAPI.DeleteLicence("Ship", "roblox", "1234567") //Deletes a ship licence fro
 ### GetUser(ClientType, Identification)
 Returns a user with the information you gave.
 
+### GetLinkCode(RobloxId)
+Returns a code that you can use to link the Roblox Id.
+
+### LinkUser(LinkCode, DiscordId)
+Links the Discord user of the Discord Id with the code given.
+
+### GetHubInfo()
+Returns a HubInfo class (information of your hub).
