@@ -1,7 +1,7 @@
 {
   "name": "onpoint-api",
   "version": "1.0.2",
-  "description": "A wrapper for the onPoint API.",
+  "description": "A NodeJS wrapper for the onPoint API.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
