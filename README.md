@@ -39,6 +39,8 @@ VendrAPI.GetLinkCode("1234567") //Get the link code for a Roblox user with the i
 VendrAPI.LinkUser("ts10106", "12345678910111213") //Link the Discord user with the id of 12345678910111213 with the link code which you can get with the GetLinkCode function.
 
 //Hub
+VendrAPI.GetHubInfo() //Returns a HubInfo class of the hub.
+VendrAPI.GetHubProducts() //Returns an array of Product classes of each product in your hub.
 
 ```
 
