@@ -75,6 +75,7 @@ Creates a licence for the user. Errors if they already have one.
 Deletes a licence for the user. Errors if they don't have it in the first place.
 
 # Classes
+Custom made classes used by the package.
 
 ## User
 
@@ -84,4 +85,51 @@ Deletes a licence for the user. Errors if they don't have it in the first place.
   DiscordId: "0",
   DarkMode: false
 }
+```
+
+## HubInfo
+
+```js
+{
+  OwnerId: "0",
+  HubId: "0",
+  GroupId: "0"
+}
+```
+
+## Product
+
+```js
+{
+  ProductId: "",
+  DevProduct: "0",
+  Name: "",
+  Sale: true,
+  Stock: "Unlimited",
+  TestGame: "None"
+}
+```
+
+## Licence
+
+```js
+{
+  RobloxId: "0",
+  DiscordId: "0",
+  ProductId: "",
+  ProductName: "",
+  HubId: "0"
+}
+```
+
+The Licence class also has a function `delete()` to delete the licence. An example of it's usage is below.
+
+```js
+
+VendrAPI.GetLicence("Plane", "roblox", "1234567").then(licence => {
+
+  licence.delete().then(res => console.log("Deleted licence."))
+
+})
+
 ```
