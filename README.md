@@ -40,8 +40,9 @@ VendrAPI.GetHubProducts() //Returns an array consisting of Product classes of ea
 VendrAPI.GetLicence("IFE", "roblox", "1234567") //Gets a Roblox user with the Roblox Id of 1234567's IFE licence. Will error if there is no licence.
 VendrAPI.CreateLicence("Plane", "discord", "12345678910111213") //Creates a Plane licence for the Discord user with the id of 12345678910111213.
 VendrAPI.DeleteLicence("Ship", "roblox", "1234567") //Deletes a ship licence from the Roblox user with the Roblox Id of 1234567.
-
-
 ```
+
+## List of Functions (API Endpoints)
+
 
 
