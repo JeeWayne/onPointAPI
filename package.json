@@ -1,6 +1,6 @@
 {
   "name": "onpoint-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A NodeJS wrapper for the onPoint API.",
   "main": "index.js",
   "scripts": {
