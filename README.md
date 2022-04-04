@@ -10,6 +10,12 @@
 
 A NodeJS wrapper for the [onPoint API](https://onpointrblx.com/developers/vendr).
 
+```js
+const onPointAPI = require('onpoint-api');
+
+const VendrAPI = new onPointAPI.VendrAPI("ApiKey", "HubId")
+```
+
 # Installation
 
 ```javascript
@@ -67,3 +73,15 @@ Creates a licence for the user. Errors if they already have one.
 
 ### DeleteLicence(ProductName, ClientType, Identification)
 Deletes a licence for the user. Errors if they don't have it in the first place.
+
+# Classes
+
+## User
+
+```js
+{
+  RobloxId: "0",
+  DiscordId: "0",
+  DarkMode: false
+}
+```
