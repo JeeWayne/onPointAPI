@@ -1,0 +1,25 @@
+{
+  "name": "onpoint-api",
+  "version": "1.0.0",
+  "description": "A wrapper for the onPoint API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeeWayne/onPointAPI.git"
+  },
+  "keywords": [
+    "OPAPI"
+  ],
+  "author": "JeeWayne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeeWayne/onPointAPI/issues"
+  },
+  "homepage": "https://github.com/JeeWayne/onPointAPI#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
