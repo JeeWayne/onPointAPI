@@ -18,8 +18,8 @@ const VendrAPI = new onPointAPI.VendrAPI("ApiKey", "HubId")
 
 # Installation
 
-```javascript
-$ npm install onpoint-api
+```sh-session
+npm install onpoint-api
 ```
 
 ## Example Usage
