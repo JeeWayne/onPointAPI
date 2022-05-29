@@ -13,100 +13,102 @@ A NodeJS wrapper for the [onPoint API](https://onpointrblx.com/developers/vendr)
 ```js
 const onPointAPI = require('onpoint-api');
 
-const VendrAPI = new onPointAPI.VendrAPI("ApiKey", "HubId")
+const VendrAPI = new onPointAPI.VendrAPI("ApiKey", "HubId", {version: 'v2'}) //Optional version parameter
 ```
 
 # Installation
 
-```javascript
+```js
 $ npm install onpoint-api
 ```
 
 ## Example Usage
 
-```javascript
+```js
 const onPointAPI = require('onpoint-api');
 
 //VendrAPI
 const VendrAPI = new onPointAPI.VendrAPI("APIKey", "HubID")
 
+//Files
+VendrAPI.GetFile("123aa345") //Returns the url of the product with the id of 123aa345's file.
+
+//Hub
+VendrAPI.GetHubInfo() //Returns a Hub class with the information of your hub.
+
 //Users
 VendrAPI.GetUser("discord", "12345678910111213") //Returns a User class which the Discord Id is 12345678910111213.
 VendrAPI.GetUser("roblox", "1234567") //Returns a User class which the Roblox Id is 1234567.
 
-//Linking
-VendrAPI.GetLinkCode("1234567") //Get the link code for a Roblox user with the id of 1234567.
-VendrAPI.LinkUser("ts10106", "12345678910111213") //Link the Discord user with the id of 12345678910111213 with the link code which you can get with the GetLinkCode function.
-
-//Hub
-VendrAPI.GetHubInfo() //Returns a HubInfo class of the hub.
-VendrAPI.GetHubProducts() //Returns an array consisting of Product classes of each product in your hub.
-
 //Licenses
-VendrAPI.GetLicence("IFE", "roblox", "1234567") //Gets a Roblox user with the Roblox Id of 1234567's IFE licence. Will error if there is no licence.
-VendrAPI.CreateLicence("Plane", "discord", "12345678910111213") //Creates a Plane licence for the Discord user with the id of 12345678910111213.
-VendrAPI.DeleteLicence("Ship", "roblox", "1234567") //Deletes a ship licence from the Roblox user with the Roblox Id of 1234567.
+VendrAPI.GetLicence("roblox", "1234567", "123aa345") //Checks if a roblox user with the id of 1234567 owns a licence.
+VendrAPI.GrantLicence("discord", "12345678910111213", "123aa345") //Grants a licence to a discord user with the id of 12345678910111213.
+VendrAPI.RevokeLicence("roblox", "1234567", "123aa345") //Revokes a licence from the Roblox user with the id of 1234567.
 ```
 
 ## List of Functions (API Endpoints)
 
-### GetUser(ClientType, Identification)
-Returns a user with the information you gave.
-
-### GetLinkCode(RobloxId)
-Returns a code that you can use to link the Roblox Id.
-
-### LinkUser(LinkCode, DiscordId)
-Links the Discord user of the Discord Id with the code given.
+### GetFile(ProductId)
+Returns a URL of a product with the id you gave.
 
 ### GetHubInfo()
-Returns a HubInfo class (information of your hub).
+Returns a hub class.
 
-### GetHubProducts()
-Rerturns an array consisting of Product classes.
+### GrantLicence(AccountType, AccountId, ProductId)
+Grants a licence of the product with the id you gave to the user with the information you provided.
 
-### GetLicence(ProductName, ClientType, Identification)
-Returns a licence class if the user owns a licence. Errors if they don't
+### RevokeLicence(AccountType, AccountId, ProductId)
+Revokes a licence of the product with the id you gave from the user with the information you provided.
 
-### CreateLicence(ProductName, ClientType, Identification)
-Creates a licence for the user. Errors if they already have one.
+### GetLicence(AccountType, AccountId, ProductName)
+Checks if the user with the information you provided owns the product with the name you gave.
 
-### DeleteLicence(ProductName, ClientType, Identification)
-Deletes a licence for the user. Errors if they don't have it in the first place.
+### GetUser(AccountType, AccountId)
+Returns a user class with the information you gave.
 
 # Classes
 Custom made classes used by the package.
+
+## Hub
+
+```js
+{
+  id: "", //The id of the hub.
+  GroupName: "", //The name of the hub.
+  ServerId: "0", //The server if of the hub.
+  HubType: "Group" || "User", //The type of the hub.
+  TypeId: "0", //The type's id of the hub.
+  CreatedAt: 0, //The timestamp when the hub was created.
+  Owner: UserClass || "0", //The owner of the hub.
+  Settings: HubSettingsClass, //The settings of the hub.
+  Tags: [TagClass], //The tags in the hub.
+  Products: [ProductClass] //The products in the hub.
+}
+```
+
+# HubSettings
+
+```js
+{
+  ActionLogs: false || "0", //The channel where action logs will be sent to.
+  PurchaseLogs: false || "0", //The channel where purchase logs will be sent to.
+  Description: undefined || "", //The hub's description.
+  HubGame: undefined || "0", //The hub game's id.
+  StaffRole: false || "0", //The staff role of the hub.
+  Color: "", //The color theme of the hub.
+  Terms: undefined || "" //The terms and conditions of the hub.
+}
+```
 
 ## User
 
 ```js
 {
-  RobloxId: "0",
-  DiscordId: "0",
-  DarkMode: false
-}
-```
-
-## HubInfo
-
-```js
-{
-  OwnerId: "0",
-  HubId: "0",
-  GroupId: "0"
-}
-```
-
-## Product
-
-```js
-{
-  ProductId: "",
-  DevProduct: "0",
-  Name: "",
-  Sale: true,
-  Stock: "Unlimited",
-  TestGame: "None"
+  id: "", //The user's account id.
+  DiscordId: "0", //The Discord Id of the user.
+  RobloxId: "0", //The Roblox Id of the user.
+  Licences: undefined || [LicenceClass], //The licences the user owns.
+  CreatedAt: 0 //The timestamp when the account was created.
 }
 ```
 
@@ -114,22 +116,67 @@ Custom made classes used by the package.
 
 ```js
 {
-  RobloxId: "0",
-  DiscordId: "0",
-  ProductId: "",
-  ProductName: "",
-  HubId: "0"
+  Hub: "", //The id of the licence's hub.
+  Product: "", //The id of the licence's product.
+  CreatedAt: 0 //The timestamp when the licence was created.
 }
 ```
 
-The Licence class also has a function `delete()` to delete the licence. An example of it's usage is below.
+## Product
 
 ```js
+{
+  id: "", //The product's id.
+  Name: "", //The name of the product.
+  Description: undefined || "", //The description of the product.
+  Image: undefined || "0", //The image of the product.
+  DevProduct: "Free" || "0", //The developer product of the product.
+  TestGame: undefined || "0", //The testing game of the product.
+  Stock: "Unlimited" || 0, //The stock of the product.
+  Sale: true || false, //Whether or not the product is on sale.
+  Tags: [TagClass], //The tags of the product.
+  FileType: undefined || "File" || "Text" || "Link", //The file type of the product.
+  File: undefined || "", //The product's file.
+  Reviews: [ReviewClass] //The reviews of the product.
+}
+```
+The product class also has the following functions.
+```js
 
-VendrAPI.GetLicence("Plane", "roblox", "1234567").then(licence => {
+Product.GrantLicence("discord", "123456789101112") //Grants the product's licence to a user. Returns true or errors if it failed.
+Product.RevokeLicence("discord", "123456789101112") //Revokes the product's licence from a user. Returns true or errors if it failed.
+Product.GetLicence("discord", "12345678910111213") //Checks if a user owns a licence of the product. Returns true or false.
 
-  licence.delete().then(res => console.log("Deleted licence."))
+```
 
-})
+## Tag
 
+```js
+{
+  id: "", //The tag's id.
+  Name: "", //The name of the tag.
+  Color: "" //The color of the tag.
+}
+```
+
+## Review
+
+```js
+{
+  id: "", //The review's id.
+  Rating: 0, //The rating of the review.
+  Comment: undefined || "", //The comment of the review.
+  User: "0", //The roblox id of the user who made the review.
+  CreatedAt: 0, //The timestamp when the review was created.
+  Reports: [ReportClass] //The reports the review has.
+}
+```
+
+## Report
+
+```js
+{
+  id: "", //The report's id.
+  User: "0" //The roblox id of the user who reported.
+}
 ```
