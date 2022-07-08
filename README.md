@@ -13,7 +13,7 @@ A NodeJS wrapper for the [onPoint API](https://onpointrblx.com/developers/vendr)
 ```js
 const onPointAPI = require('onpoint-api');
 
-const VendrAPI = new onPointAPI.VendrAPI("ApiKey", "HubId", {version: 'v2'}) //Optional version parameter
+const VendrAPI = new onPointAPI.VendrAPI("ApiKey", "HubId")
 ```
 
 # Installation
