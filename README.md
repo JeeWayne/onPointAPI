@@ -124,7 +124,7 @@ UserClass.GrantLicence(ProductId)
 ```js
 {
   Hub: "", //The id of the licence's hub.
-  Product: "", //The id of the licence's product.
+  Product: ProductClass || "", //The id of the licence's product.
   CreatedAt: 0 //The timestamp when the licence was created.
 }
 ```
