@@ -112,6 +112,12 @@ Custom made classes used by the package.
   CreatedAt: 0 //The timestamp when the account was created.
 }
 ```
+The User class also has the following functions.
+```js
+
+UserClass.GrantLicence(ProductId)
+
+```
 
 ## Licence
 
@@ -125,7 +131,9 @@ Custom made classes used by the package.
 The Licence class also has the following function.
 ```js
 
-LicenceClass.Revoke() //Revokes the licence.
+UserClass.GrantLicence(ProductId) //Grants the product's licence to a user. Returns true or errors if it failed.
+UserClass.RevokeLicence(ProductId) //Revokes the product's licence from a user. Returns true or errors if it failed.
+UserClass.GetLicence(ProductName) //Checks if a user owns a licence of the product. Returns true or false.
 
 ```
 
@@ -150,9 +158,9 @@ LicenceClass.Revoke() //Revokes the licence.
 The product class also has the following functions.
 ```js
 
-ProductClass.GrantLicence("discord", "123456789101112") //Grants the product's licence to a user. Returns true or errors if it failed.
-ProductClass.RevokeLicence("discord", "123456789101112") //Revokes the product's licence from a user. Returns true or errors if it failed.
-ProductClass.GetLicence("discord", "12345678910111213") //Checks if a user owns a licence of the product. Returns true or false.
+ProductClass.GrantLicence(AccountType, AccountId) //Grants the product's licence to a user. Returns true or errors if it failed.
+ProductClass.RevokeLicence(AccountType, AccountId) //Revokes the product's licence from a user. Returns true or errors if it failed.
+ProductClass.GetLicence(AccountType, AccountId) //Checks if a user owns a licence of the product. Returns true or false.
 
 ```
 
