@@ -40,7 +40,7 @@ VendrAPI.GetHubInfo() //Returns a Hub class with the information of your hub.
 VendrAPI.GetUser("discord", "12345678910111213") //Returns a User class which the Discord Id is 12345678910111213.
 VendrAPI.GetUser("roblox", "1234567") //Returns a User class which the Roblox Id is 1234567.
 
-//Licenses
+//Licences
 VendrAPI.GetLicence("roblox", "1234567", "123aa345") //Checks if a roblox user with the id of 1234567 owns a licence.
 VendrAPI.GrantLicence("discord", "12345678910111213", "123aa345") //Grants a licence to a discord user with the id of 12345678910111213.
 VendrAPI.RevokeLicence("roblox", "1234567", "123aa345") //Revokes a licence from the Roblox user with the id of 1234567.
@@ -122,6 +122,12 @@ Custom made classes used by the package.
   CreatedAt: 0 //The timestamp when the licence was created.
 }
 ```
+The Licence class also has the following function.
+```js
+
+LicenceClass.Revoke() //Revokes the licence.
+
+```
 
 ## Product
 
@@ -144,9 +150,9 @@ Custom made classes used by the package.
 The product class also has the following functions.
 ```js
 
-Product.GrantLicence("discord", "123456789101112") //Grants the product's licence to a user. Returns true or errors if it failed.
-Product.RevokeLicence("discord", "123456789101112") //Revokes the product's licence from a user. Returns true or errors if it failed.
-Product.GetLicence("discord", "12345678910111213") //Checks if a user owns a licence of the product. Returns true or false.
+ProductClass.GrantLicence("discord", "123456789101112") //Grants the product's licence to a user. Returns true or errors if it failed.
+ProductClass.RevokeLicence("discord", "123456789101112") //Revokes the product's licence from a user. Returns true or errors if it failed.
+ProductClass.GetLicence("discord", "12345678910111213") //Checks if a user owns a licence of the product. Returns true or false.
 
 ```
 
