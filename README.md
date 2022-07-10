@@ -108,7 +108,7 @@ Custom made classes used by the package.
   DiscordId: "0", //The Discord Id of the user.
   RobloxId: "0", //The Roblox Id of the user.
   VendrTier: "Free" || "Premium" || "Ultimate", //The tier of Vendr the user owns.
-  Licences: undefined || [LicenceClass], //The licences the user owns.
+  Licences: [LicenceClass], //The licences the user owns.
   CreatedAt: 0 //The timestamp when the account was created.
 }
 ```
