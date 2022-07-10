@@ -49,7 +49,7 @@ VendrAPI.RevokeLicence("roblox", "1234567", "123aa345") //Revokes a licence from
 ## List of Functions (API Endpoints)
 
 ### GetFile(ProductId)
-Returns a URL of a product with the id you gave.
+Returns a URL of the file of a product with the id you gave.
 
 ### GetHubInfo()
 Returns a hub class.
@@ -162,6 +162,7 @@ ProductClass.GrantLicence(AccountType, AccountId) //Grants the product's licence
 ProductClass.RevokeLicence(AccountType, AccountId) //Revokes the product's licence from a user. Returns true or errors if it failed.
 ProductClass.GetLicence(AccountType, AccountId) //Checks if a user owns a licence of the product. Returns true or false.
 
+ProductClass.GetFile() //Returns a URL of the file of the product.
 ```
 
 ## Tag
