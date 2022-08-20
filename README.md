@@ -4,6 +4,10 @@
   <p>
     <a href="https://onpointrblx.com"><img src="https://i.imgur.com/5SBIYK5.png" width="546" alt="onPoint" /></a>
   </p>
+  <br />
+  <p>
+    <a href="https://discord.gg/djs"><img src="https://img.shields.io/discord/562017478289653763?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
+  </p>
 </div>
 
 # onPoint API
